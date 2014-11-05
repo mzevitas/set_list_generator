@@ -1,9 +1,9 @@
 (function () {
 
-  App.Views.ListCoffee = Backbone.View.extend({
+  App.Views.ListSong = Backbone.View.extend({
 
     tagName: 'ul',
-    className: 'allCoffees',
+    className: 'allSongs',
 
     events: {},
 
@@ -16,7 +16,7 @@
       this.collection.on('destroy', this.render, this);
 
       // Get our Element On Our Page
-      $('#coffeeList').html(this.$el);
+      $('#songList').html(this.$el);
 
     },
 

@@ -1,10 +1,10 @@
 (function () {
 
   // Create Instance of Collection
-  App.setlist = new App.Collections.Setlist();
+  App.songs = new App.Collections.Songs();
 
   // Fetch any server-side coffees
-  App.setlist.fetch().done( function () {
+  App.songs.fetch().done( function () {
 
     App.router = new App.Routers.AppRouter();
 

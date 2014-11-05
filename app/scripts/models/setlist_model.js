@@ -1,6 +1,6 @@
 (function () {
 
-  App.Models.SetList = Backbone.Model.extend({
+  App.Models.Song = Backbone.Model.extend({
 
     idAttribute: '_id',
 
@@ -14,8 +14,8 @@
     },
 
     initialize: function () {
-      var t = this.get('name');
-      //console.log(t + " has been added");
+      var t = this.get('song');
+
     }
 
   });

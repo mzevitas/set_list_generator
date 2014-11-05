@@ -1,11 +1,11 @@
 (function () {
 
-  App.Views.AddCoffee = Backbone.View.extend({
+  App.Views.AddSong = Backbone.View.extend({
 
-    el: '#coffeeForm',
+    el: '#songForm',
 
     events: {
-      'submit #addCoffee' : 'addCoffee'
+      'submit #addSong' : 'addSong'
     },
 
     initialize: function () {
@@ -16,15 +16,19 @@
       this.$el.html($('#addTemp').html());
     },
 
-    addCoffee: function (e) {
+    addSong: function (e) {
       e.preventDefault();
 
-      var c = new App.Models.Coffee({
-        name: $('#coffee_name').val(),
-        brand: $('#coffee_brand').val()
+      var c = new App.Models.Song({
+        song: $('#song_name').val(),
+        band: $('#band').val(),
+        tempo: $('#tempo').val(),
+        key: $('#key').val(),
+        length: $('#song_length').val()
+
       });
 
-      App.coffees.add(c).save();
+      App.songs.add(c).save();
 
     }
 

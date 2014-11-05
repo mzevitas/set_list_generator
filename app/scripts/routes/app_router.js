@@ -13,15 +13,15 @@
     },
 
     home: function () {
-      new App.Views.AddCoffee();
-      new App.Views.ListCoffee({ collection: App.coffees });
+      new App.Views.AddSong();
+      new App.Views.ListSong({ collection: App.songs });
     },
 
-    editCoffee: function (id) {
+    editSong: function (id) {
 
-      var c = App.coffees.get(id);
+      var c = App.songs.get(id);
 
-      new App.Views.SingleCoffee({ coffee: c });
+      new App.Views.SingleSong({ song: c });
     }
 
   });

@@ -1,13 +1,13 @@
 (function () {
 
-  App.Views.SingleCoffee = Backbone.View.extend({
+  App.Views.SingleSong = Backbone.View.extend({
 
     tagName: 'ul',
-    className: 'coffeeSingle',
+    className: 'coffeeSong',
 
     events: {
-      'submit #updateCoffee' : 'updateCoffee',
-      'click #delete' : 'deleteCoffee'
+      'submit #updateSong' : 'updateSong',
+      'click #delete' : 'deleteSong'
     },
 
     template: _.template($('#singleTemp').html()),
@@ -16,43 +16,45 @@
       this.options = options;
       this.render();
 
-      $('#coffeeForm').empty();
+      $('#songForm').empty();
 
       // Get our Element On Our Page
-      $('#coffeeList').html(this.$el);
+      $('#songList').html(this.$el);
     },
 
     render: function () {
 
       this.$el.empty();
 
-      this.$el.html(this.template(this.options.coffee.toJSON()));
+      this.$el.html(this.template(this.options.song.toJSON()));
 
     },
 
-    updateCoffee: function (e) {
+    updateSong: function (e) {
       e.preventDefault();
 
       // Update our Model Instance
-      this.options.coffee.set({
-        name: $('#update_name').val(),
-        brand: $('#update_brand').val(),
-        comments: $('#update_comments').val()
+      this.options.song.set({
+        song: $('#song_name').val(),
+        band: $('#band').val(),
+        tempo: $('#tempo').val(),
+        key: $('#key').val(),
+        length: $('#song_length').val()
       });
 
       // Save Instance
-      this.options.coffee.save();
+      this.options.song.save();
 
       // Go back to our home page
       App.router.navigate('', {trigger: true});
 
     },
 
-    deleteCoffee: function (e) {
+    deleteSong: function (e) {
       e.preventDefault();
 
       // Remove Coffee
-      this.options.coffee.destroy();
+      this.options.song.destroy();
 
       // Go home ET
       App.router.navigate('', {trigger: true});

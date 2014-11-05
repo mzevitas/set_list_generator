@@ -46,14 +46,14 @@
         <a href="#/edit/<%= _id %>">
           <div class="card-header"><%= song %> by <%= band %></div>
           <% if(tempo !== '') { %>
-              <div class="card-copy"><p><%= tempo %></p></div>
+              <div class="card-copy"><p>Tempo: <%= tempo %> BPM</p></div>
           <% } %>
 
           <% if(key !== '') { %>
-              <div class="card-copy"><p><%= key %></p></div>
+              <div class="card-copy"><p>In the Key of <%= key %></p></div>
           <% } %>
           <% if(length !== '') { %>
-              <div class="card-copy"><p><%= length %></p></div>
+              <div class="card-copy"><p>Song length: <%= length %></p></div>
           <% } %>
 
         </a>
