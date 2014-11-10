@@ -9,7 +9,9 @@
       band: '',
       tempo: '',
       key: '',
-      length: ''
+      length: '',
+      order: '',
+      set: ''
 
     },
 

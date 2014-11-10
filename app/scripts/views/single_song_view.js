@@ -3,7 +3,7 @@
   App.Views.SingleSong = Backbone.View.extend({
 
     tagName: 'ul',
-    className: 'coffeeSong',
+
 
     events: {
       'submit #updateSong' : 'updateSong',
@@ -17,50 +17,48 @@
       this.render();
 
       $('#songForm').empty();
-
-      // Get our Element On Our Page
       $('#songList').html(this.$el);
     },
 
     render: function () {
-
       this.$el.empty();
-
-      this.$el.html(this.template(this.options.song.toJSON()));
-
+          this.$el.html(this.template(this.options.song.toJSON()));
     },
 
     updateSong: function (e) {
       e.preventDefault();
 
-      // Update our Model Instance
       this.options.song.set({
         song: $('#song_name').val(),
         band: $('#band').val(),
         tempo: $('#tempo').val(),
         key: $('#key').val(),
-        length: $('#song_length').val()
+        length: $('#song_length').val(),
+        order: $('#order').val(),
+        set: $('#set').val()
       });
 
-      // Save Instance
+
       this.options.song.save();
 
-      // Go back to our home page
+
       App.router.navigate('', {trigger: true});
+
+
+
+  $('#set1').on('click').append(this.template);
+
+
+
 
     },
 
     deleteSong: function (e) {
       e.preventDefault();
 
-      // Remove Coffee
       this.options.song.destroy();
 
-      // Go home ET
       App.router.navigate('', {trigger: true});
-
     }
-
   });
-
 }());

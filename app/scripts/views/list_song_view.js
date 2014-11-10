@@ -12,18 +12,14 @@
     initialize: function () {
       this.render();
 
+      this.collection.off();
       this.collection.on('sync', this.render, this);
-      this.collection.on('destroy', this.render, this);
 
-      // Get our Element On Our Page
       $('#songList').html(this.$el);
-
     },
-
     render: function () {
       var self = this;
 
-      // Empty out
       this.$el.empty();
 
       this.collection.each(function (c) {
@@ -32,7 +28,5 @@
 
       return this;
     }
-
   });
-
 }());

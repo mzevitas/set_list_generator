@@ -3,24 +3,177 @@
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
 // Custom Styles
+
 body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+  background-image: url("http://www.freevectors.me/wp-content/uploads/2013/08/Lined-Paper-Background.jpg");
+
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+.container {
+   @include outer-container;
+   font-family: 'Merriweather', serif;
+
+}
+
+h1 {
+
+  text-align: center;
+  color: blue;
+   &:hover {
+     color: red;
+
+   }
+}
+
+h2 {
+  margin-left: 25px;
+}
+h3 {
+  float: right;
+  margin-top: -45px;
+  margin-right: 80px;
+  font-size: 23px;
+
+}
+
+
+
+input {
+  width: 450px;
+  margin-top: 15px;
+  padding: 5px;
+  box-shadow: 2px 2px 2px 2px hsla(0,0%,60%,1);
+  text-transform: capitalize;
+
+}
+
+.addsongbtn{
+  margin-top: 15px;
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 7px;
+  background-color: hsla(41,57%,71%,1);
+  box-shadow: inset 0 0 10px hsla(220,3%,66%,1);
+  &:hover{
+    background-color: hsla(39,76%,38%,1);
+    color: white;
   }
+}
+
+#songForm {
+@include span-columns(6);
+  padding: 10px;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 500px;
+
+}
+
+#songList {
+  @include span-columns(6);
+  @include omega();
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 500px;
+
+
+}
+
+#set1 {
+  @include span-columns(6);
+}
+#set2 {
+  @include span-columns(6);
+  @include omega();
+}
+
+
+.card {
+  list-style-type: none;
+  text-decoration: none;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 8px;
+  color: red;
+  background-color: hsla(0,0%,100%,0.3);
+
+  &:hover {
+    background-color: hsla(0,0%,100%,0.5);
+    color: white;
+    border-radius: 8px;
+
+  }
+
+}
+
+.card-header {
+  width: 398px;
+  margin-top: 15px;
+  padding: 5px;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 20px;
+  text-decoration: underline;
+
+
+}
+
+.infocard{
+
+  span{
+    /* margin-left: 85px; */
+    float: right;
+
+}
+}
+
+
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.updatebtn {
+  margin-top: 15px;
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 7px;
+  background-color: hsla(41,57%,71%,1);
+  box-shadow: inset 0 0 10px hsla(220,3%,66%,1);
+  &:hover{
+    background-color: hsla(39,76%,38%,1);
+    color: white;
+  }
+}
+
+#delete {
+  margin-top: 15px;
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 7px;
+  background-color: hsla(41,57%,71%,1);
+  box-shadow: inset 0 0 10px hsla(220,3%,66%,1);
+  &:hover{
+    background-color: hsla(1,47%,45%,1);
+    color: white;
+  }
+}
+
+
+.updatecard{
+  text-decoration: none;
+  list-style-type: none;
+
+
+  input{
+    width: 300px;
+  }
+}
+
+.set {
+
 }

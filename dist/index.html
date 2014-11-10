@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
     <title>setlistbb</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
+<link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/vendor.css">
 
     <link rel="stylesheet" href="styles/main.css">
@@ -15,21 +15,87 @@
   </head>
   <body>
 
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Normalize CSS</li>
-        <li>Sass</li>
-        <li>Modernizr</li>
-        <li>Bourbon & Neat</li>
-        <li>UnderscoreJS</li>
-      </ul>
-      <p>Don't forget to update your readme file!!</p>
+      <div class="container">
+      <h1>SetList Maker</h1>
+      <h2>Enter Your Songs Here:</h2>
+
+      <div id="songForm"></div>
+      <div id="songList"></div>
+
+      <div id="set1">
+        <h1>Set 1:</h1>
+      </div>
+
+      <div id="set2">
+      <h1>Set 2:</h1>
+    </div>
     </div>
 
+    <script type="text/template" id="addList">
+        <form id="addSong">
+        <input type="text" id="song_name" placeholder="Song Name" />
+        <input type="text" id="band" placeholder="Band/Artist" />
+        <input type="text" id="tempo" placeholder="Song's Tempo" />
+        <input type="text" id="song_length" placeholder="Length of Song" />
+        <input type="text" id="key" placeholder="The Key of the Song" />
+        <br>
+
+        <button class="addsongbtn">Add song</button>
+        </form>
+
+    </script>
+
+    <script type="text/template" id="listTemp">
+      <li class="card" id="<%= _id %>">
+        <a href="#/edit/<%= _id %>">
+          <div class="card-header"><%= song %> by <%= band %></div>
+
+              <div class="infocard"><p>Tempo: <%= tempo %> BPM. <span > Song length: <%= length %></span></p>
+
+              <p class='infocard'>In the Key of <%= key %><span class="orders" >Setlist Order: <%= order %></span></p>
+
+</div>
+        </a>
+      </li>
+    </script>
+
+    <script type="text/template" id="singleTemp">
+      <li class="updatecard" id="<%= _id %>">
+        <form id="updateSong">
+            <div class="updateheader">
+              <input type='text' value="<%= song %>" id="song_name" placeholder='Song'></input>
+            <input type='text' value="<%= band %>" id="band" placeholder='band' />
+                    <input type='text' value="<%= tempo %>" id="tempo" placeholder='Tempo' />
+                       <input type='text' value="<%= key %>" id="key" placeholder='Key'/>
+                       <input type='text' value="<%= length %>" id="length" placeholder='length' />
+                       <input type='text' value="<%= order %>" id='order' placeholder='Song Order'/>
+                       <br>
+                      <label>
+
+            <button id="set1btn">Set 1</button> <button id="set2btn">Set 2</button>
+
+
+            </div>
+            <button class='updatebtn'>Update Song</button>
+            <button id="delete">Delete</button>
+        </form>
+      </li>
+    </script>
+
+
+
+
+
     <script src="scripts/vendor.js"></script>
+
+  <script type="text/javascript">
+        window.App = {};
+        App.Models = {};
+        App.Collections = {};
+        App.Views = {};
+        App.Routers = {};
+    </script>
+
 
         <script src="scripts/main.js"></script>
 </body>
