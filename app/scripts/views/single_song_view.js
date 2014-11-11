@@ -1,6 +1,6 @@
 (function () {
 
-  App.Views.SingleSong = Backbone.View.extend({
+  App.Views.SingleSong = Parse.View.extend({
 
     tagName: 'ul',
 

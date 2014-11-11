@@ -1,6 +1,6 @@
 (function () {
 
-  App.Views.AddSong = Backbone.View.extend({
+  App.Views.AddSong = Parse.View.extend({
 
     events: {
       'submit #addSong' : 'addSong'
@@ -24,7 +24,11 @@
         length: $('#song_length').val()
       });
 
-      App.songs.add(c).save();
+        c.save(null, {
+      success: function () {
+        App.song.add(c);
+        App.router.navigate('', { trigger: true });
+      }
     }
   });
 }());

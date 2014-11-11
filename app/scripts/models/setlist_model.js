@@ -1,8 +1,10 @@
 (function () {
 
-  App.Models.Song = Backbone.Model.extend({
+  App.Models.Song = Parse.Object.extend({
 
-    idAttribute: '_id',
+    className: 'SetList',
+
+    idAttribute: 'objectId',
 
     defaults: {
       song: '',

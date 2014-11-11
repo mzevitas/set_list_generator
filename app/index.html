@@ -54,8 +54,8 @@
     </script>
 
     <script type="text/template" id="listTemp">
-      <li class="card" id="<%= _id %>">
-        <a href="#/edit/<%= _id %>">
+      <li class="card" id="<%= objectId %>">
+        <a href="#/edit/<%= objectId %>">
           <div class="card-header"><%= song %> by <%= band %></div>
 
               <div class="infocard"><p>Tempo: <%= tempo %> BPM. <span > Song length: <%= length %></span></p>
@@ -68,7 +68,7 @@
     </script>
 
     <script type="text/template" id="singleTemp">
-      <li class="updatecard" id="<%= _id %>">
+      <li class="updatecard" id="<%= objectId %>">
         <form id="updateSong">
             <div class="updateheader">
               <input type='text' value="<%= song %>" id="song_name" placeholder='Song'></input>
@@ -98,7 +98,7 @@
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
-    <script src="../bower_components/backbone/backbone.js"></script>
+    <script src="//www.parsecdn.com/js/parse-1.3.1.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
