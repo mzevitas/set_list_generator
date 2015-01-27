@@ -50,8 +50,8 @@
 
 
 
-
     },
+
 
     deleteSong: function (e) {
       e.preventDefault();
@@ -61,4 +61,7 @@
       App.router.navigate('', {trigger: true});
     }
   });
+
+  $('.enter').hide();
+
 }());

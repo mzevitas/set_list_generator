@@ -25,6 +25,10 @@
       });
 
       App.songs.add(c).save();
-    }
+    },
+
   });
+  $('.enter').hide();
+
+
 }());
